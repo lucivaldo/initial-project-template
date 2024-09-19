@@ -1,0 +1,1 @@
+{"type":"object","properties":{"id":{"type":"string","example":"1"},"title":{"type":"string","example":"a title"},"views":{"type":"integer","example":100}},"required":["id","title","views"],"x-readme-ref-name":"Post"}

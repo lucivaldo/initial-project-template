@@ -1,0 +1,294 @@
+openapi: 3.0.0
+info:
+  title: Example API
+  version: 1.0.0
+paths:
+  /posts:
+    get:
+      summary: Retrieve all posts
+      operationId: getPosts
+      responses:
+        '200':
+          description: A list of posts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Post'
+    post:
+      summary: Create a new post
+      operationId: createPost
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostCreate'
+      responses:
+        '201':
+          description: Post created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+
+  /posts/{id}:
+    get:
+      summary: Retrieve a post by ID
+      operationId: getPostById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A post object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+    put:
+      summary: Update a post by ID
+      operationId: updatePost
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostUpdate'
+      responses:
+        '200':
+          description: Post updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+    delete:
+      summary: Delete a post by ID
+      operationId: deletePost
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Post deleted successfully
+
+  /comments:
+    get:
+      summary: Retrieve all comments
+      operationId: getComments
+      responses:
+        '200':
+          description: A list of comments
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Comment'
+    post:
+      summary: Create a new comment
+      operationId: createComment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommentCreate'
+      responses:
+        '201':
+          description: Comment created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+
+  /comments/{id}:
+    get:
+      summary: Retrieve a comment by ID
+      operationId: getCommentById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A comment object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+    put:
+      summary: Update a comment by ID
+      operationId: updateComment
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommentUpdate'
+      responses:
+        '200':
+          description: Comment updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+    delete:
+      summary: Delete a comment by ID
+      operationId: deleteComment
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Comment deleted successfully
+
+  /profile:
+    get:
+      summary: Retrieve the profile
+      operationId: getProfile
+      responses:
+        '200':
+          description: The profile object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+    put:
+      summary: Update the profile
+      operationId: updateProfile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProfileUpdate'
+      responses:
+        '200':
+          description: Profile updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+
+components:
+  schemas:
+    Post:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "1"
+        title:
+          type: string
+          example: "a title"
+        views:
+          type: integer
+          example: 100
+      required:
+        - id
+        - title
+        - views
+
+    PostCreate:
+      type: object
+      properties:
+        title:
+          type: string
+          example: "a title"
+        views:
+          type: integer
+          example: 100
+      required:
+        - title
+        - views
+
+    PostUpdate:
+      type: object
+      properties:
+        title:
+          type: string
+          example: "updated title"
+        views:
+          type: integer
+          example: 150
+
+    Comment:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "1"
+        text:
+          type: string
+          example: "a comment about post 1"
+        postId:
+          type: string
+          example: "1"
+      required:
+        - id
+        - text
+        - postId
+
+    CommentCreate:
+      type: object
+      properties:
+        text:
+          type: string
+          example: "a comment about post 1"
+        postId:
+          type: string
+          example: "1"
+      required:
+        - text
+        - postId
+
+    CommentUpdate:
+      type: object
+      properties:
+        text:
+          type: string
+          example: "updated comment text"
+        postId:
+          type: string
+          example: "1"
+
+    Profile:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "typicode"
+      required:
+        - name
+
+    ProfileUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "updated name"

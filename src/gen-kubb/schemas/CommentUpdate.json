@@ -1,0 +1,1 @@
+{"type":"object","properties":{"text":{"type":"string","example":"updated comment text"},"postId":{"type":"string","example":"1"}},"x-readme-ref-name":"CommentUpdate"}

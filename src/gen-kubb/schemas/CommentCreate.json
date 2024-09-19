@@ -1,0 +1,1 @@
+{"type":"object","properties":{"text":{"type":"string","example":"a comment about post 1"},"postId":{"type":"string","example":"1"}},"required":["text","postId"],"x-readme-ref-name":"CommentCreate"}
