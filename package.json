@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "json-server": "npx json-server db.json"
+    "json-server": "PORT=3010 npx json-server db.json"
   },
   "dependencies": {
     "@emotion/cache": "^11.13.1",

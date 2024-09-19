@@ -10,10 +10,16 @@ export default defineConfig({
   },
   output: {
     path: './src/gen-kubb',
+    clean: true,
   },
   plugins: [
     pluginOas({}),
     pluginTs({}),
-    pluginTanstackQuery({}),
+    pluginTanstackQuery({
+      mutate: {
+        methods: ['get', 'post', 'put', 'patch', 'delete'],
+        variablesType: 'mutate',
+      },
+    }),
   ],
 })
