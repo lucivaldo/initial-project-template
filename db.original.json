@@ -2,13 +2,53 @@
   "posts": [
     {
       "id": "1",
-      "title": "a title",
-      "views": 100
+      "title": "coding tips",
+      "views": 160
     },
     {
       "id": "2",
       "title": "another title",
+      "views": 150
+    },
+    {
+      "id": "3",
+      "title": "post title",
       "views": 200
+    },
+    {
+      "id": "4",
+      "title": "sample post",
+      "views": 250
+    },
+    {
+      "id": "5",
+      "title": "blog title",
+      "views": 300
+    },
+    {
+      "id": "6",
+      "title": "interesting post",
+      "views": 175
+    },
+    {
+      "id": "7",
+      "title": "new article",
+      "views": 120
+    },
+    {
+      "id": "8",
+      "title": "another blog",
+      "views": 190
+    },
+    {
+      "id": "9",
+      "title": "tech trends",
+      "views": 220
+    },
+    {
+      "id": "10",
+      "title": "web development",
+      "views": 140
     }
   ],
   "comments": [
