@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Template para inicializar projetos Next
 
-## Getting Started
+Este template já vem configurado com:
 
-First, run the development server:
+- Material UI
+- Kubb
+- TanStack Query
+- JSON Server (um servidor que fornece dados JSON)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Como começar
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Crie seu projeto Next usando este template:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+`npx create-next-app@latest -e https://github.com/lucivaldo/initial-project-template`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Atualize as dependências para a última versão executando o script que automatiza esta tarefa:
 
-## Learn More
+`./update_dependencies.sh`
 
-To learn more about Next.js, take a look at the following resources:
+3. Opcional: execute o servidor do JSON Server para servir os dados para ambiente de desenvolvimento:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`npm run json-server`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Execute o servidor do Next:
 
-## Deploy on Vercel
+`npm run dev`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. Acesse a aplicação executando em http://localhost:3000
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Como atualizar o código cliente da API
+
+Execute o comando: `npx kubb`
